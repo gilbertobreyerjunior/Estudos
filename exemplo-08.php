@@ -3,64 +3,51 @@
 
 //Primeiro encapsulamento é o public =Estou dizendo que ele é publico
 
- class Pessoa {
+class Pessoa
+{
 
-public $nome; //Atributo
-public $cpf; //Atributo
-public $nascimento; //Atributo
-public $resultado;
-
-
-
-public function somar($salarioA, $salarioB)
-    {
-        return $salarioA + $salarioB;
- 			$resultado = somar(1000, 2000);
-    		
-
-    }
- 
-    
+  public $nome; //Atributo
+  public $cpf; //Atributo
+  public $nascimento; //Atributo
+  public $resultado;
 
 
 
+  public function somar($salarioA, $salarioB)
+  {
+    return $this->resultado = $salarioA + $salarioB;
 
+  }
 
-public function falanome() { //Método pois é uma função de uma classe
+  public function falanome()
+  { //Método pois é uma função de uma classe
 
-                     //Quero acessar o meu atributo nome porque ele está na classe Pessoa  
+                     //Quero acessar o meu atributo nome porque ele está na classe Pessoa
 	                  //$this É a representação da nossa classe já instanciada, se eu quiser fazer referencia como no exemplo de um atributo eu faço $this->nome; Sem o $
 
-return "O meu nome é: ".$this->nome;
+    return "O meu nome é: " . $this->nome;
+  }
+
+  public function falacpf()
+  {
 
 
+    return "Meu Cpf é: " . $this->cpf;
 
-   }
+  }
 
+  public function falanascimento()
+  {
 
-   public function falacpf() {
+    return "Meu nascimento é: " . $this->nascimento;
 
+  }
 
- return "Meu Cpf é: ".$this->cpf;
+  public function falasalario()
+  {
 
-   }
-
-   public function falanascimento() {
-
- return "Meu nascimento é: ".$this->nascimento;
-
-
-
-   }
-
-public function falasalario() {
-
-
-return "Meu salario total é: ".$this->somar;
-
-
-
-}
+    return "Meu salario total é: " . $this->resultado;
+  }
 
 
 
@@ -68,9 +55,9 @@ return "Meu salario total é: ".$this->somar;
 
 
 //$gilberto recebe tudo da classe pessoa
-//Crio uma variavel gilberto que é igual ao método construtor new Pessoa() 
+//Crio uma variavel gilberto que é igual ao método construtor new Pessoa()
 //Criei um objeto do tipo pessoa
-//E tudo pessoa tem o 
+//E tudo pessoa tem o
 $gilberto = new Pessoa();
 $cpf = new Pessoa();
 $nascimento = new Pessoa();
@@ -91,7 +78,8 @@ echo $cpf->falacpf();
 echo "<br>";
 echo $nascimento->falanascimento();
 echo "<br>";
-echo $salario->somar();
+echo $salario->somar(10, 20);
+echo $salario->falasalario();
 //echo $salario->falasalario();
 
 ?>
