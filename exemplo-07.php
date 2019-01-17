@@ -9,13 +9,21 @@ class Pessoa
   public $nome; //Atributo
   public $cpf; //Atributo
   public $nascimento; //Atributo
-  public $resultado;
+  public $resultado; //Atributo
+  public $imposto;
 
 
 
   public function somar($salarioA, $salarioB)
   {
-    return $this->resultado = $salarioA + $salarioB;
+    return $this->resultado = $salarioA + $salarioB;  //Aqui ele vai enviar o que recebeu dessa soma
+
+  }
+
+  public function subtrair($salarioA, $salarioB){
+
+
+     return $this->imposto = $salarioA - $salarioB;
 
   }
 
@@ -46,9 +54,16 @@ class Pessoa
   public function falasalario()
   {
 
-    return "Meu salario total é: " . $this->resultado;
+    return "Meu salario total é: " . $this->resultado; //como setamos o valor da soma na função soma, ai ele mostra
   }
 
+  public function faladesconto() {
+
+    return "Meu salario com desconto do imposto no valor de R$:500,00 é: ".$this->imposto;
+
+
+
+  }
 
 
 }
@@ -62,12 +77,13 @@ $gilberto = new Pessoa();
 $cpf = new Pessoa();
 $nascimento = new Pessoa();
 $salario = new Pessoa();
+$desconto = new Pessoa();
 
 //Setando o nome na memória =  Gilberto Breyer Junior
 $gilberto->nome = "Gilberto Breyer Junior";
 $cpf->cpf = "435345465564";
 $nascimento->nascimento = "18-06-1990";
-//$salario->somar = "" ;
+
 
 
 //Após chamo o método
@@ -77,9 +93,14 @@ echo "<br>";
 echo $cpf->falacpf();
 echo "<br>";
 echo $nascimento->falanascimento();
+//Primeiramente chamo o meu somar
+$salario->somar(1000, 2500); 
+//Após chamo o falasalario
 echo "<br>";
-echo $salario->somar(10, 20);
 echo $salario->falasalario();
-//echo $salario->falasalario();
+echo "<br>";
+$desconto->subtrair(3500, 500);
+echo $desconto->faladesconto();
+
 
 ?>
