@@ -23,7 +23,7 @@ $conn = new PDO("mysql:dbname=aviacao;host=localhost", "root", "");
 
 
 					foreach ($results as $row) {
-
+						
        
 	         			foreach($row as $key => $value) {
 
